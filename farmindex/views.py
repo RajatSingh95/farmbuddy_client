@@ -6,7 +6,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Welcome to Farm Buddy!")
+	return render(request, 'index.html')
+	#return HttpResponse("Welcome to Farm Buddy!")
 
 
 

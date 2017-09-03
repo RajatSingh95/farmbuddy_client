@@ -1,0 +1,55 @@
+   23  deactivate 
+   24  sudo apt-get install git
+   25  sudo rm /var/lib/apt/lists/lock
+   26  sudo apt-get install git
+   27  sudo rm /var/cache/apt/archives/lock
+   28  sudo rm /var/lib/dpkg/lock
+   29  virtualenv env2
+   30  virtualenv python=python3 env2
+   31  ls
+   32  source env2/bin/activate
+   33  django-admin startproject farmbuddy
+   34  ls
+   35  pip install -r requirements.txt
+   36  cd farmbuddy
+   37  pip install -r requirements.txt
+   38  git remote rm heroku
+   39  git add .
+   40  heroku git:remote -a farmbuddy-client
+   41  git init
+   42  git add .
+   43  git commit -m "init farm"
+   44  heroku login
+   45  heroku git:remote -a farmbuddy-client
+   46  heroku create
+   47  git push heroku master
+   48  git add .
+   49  git commit -m "init-farm"
+   50  git push heroku master
+   51  heroku ps:scale web=1
+   52  heroku open
+   53  python manage.py startapp farmindex
+   54  cd
+   55  ls
+   56  cd farmbuddy
+   57  ls
+   58  cd farmindex
+   59  ls
+   60  git add .
+   61  git commit -m "init-farm"
+   62  git push heroku master
+   63  cd ..
+   64  git add .
+   65  git commit -m "init-farm"
+   66  git push heroku master
+   67  git add .
+   68  git commit -m "init-farm"
+   69  git push heroku master
+   70  python manage.py runserver
+   71  python manage.py migrate
+   72  python manage.py runserver
+   73  python manage.py runserver 8080
+   74  heroku ps:scale web=0
+   75  history 20
+   76  history 30
+   77  history 55 > log_cmd.txt
