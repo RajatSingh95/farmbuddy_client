@@ -4,10 +4,9 @@
 	function getfarmersdetails(){
 		console.log('send request');
 		$.ajax({
-	data:{"csrfmiddlewaretoken": '{{ csrf_token }}' },
     url : "https://farmbuddy-server.herokuapp.com/restapi/farmerdetail/",
     type: "POST",
-    data : { 'username' : 'Ramesh Pal'},
+    data : { 'username' : 'Ramesh Pal',"csrfmiddlewaretoken": '{{ csrf_token }}' },
     success: function(data)
     {
         //data - response from server
