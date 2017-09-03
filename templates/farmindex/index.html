@@ -1,6 +1,18 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 	function getfarmersdetails(){
-		console.log('send request');	
+		console.log('send request');
+		$.ajax({
+    url : "https://farmbuddy-server.herokuapp.com/restapi/farmerdetail/",
+    type: "POST",
+    data : { 'username' : 'Ramesh Pal'},
+    success: function(data)
+    {
+        //data - response from server
+	console.log(data);
+    }
+});	
 	}
 	
 </script>
