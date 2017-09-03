@@ -4,6 +4,7 @@
 	function getfarmersdetails(){
 		console.log('send request');
 		$.ajax({
+	data:{"csrf_token":{% csrf_token %}}
     url : "https://farmbuddy-server.herokuapp.com/restapi/farmerdetail/",
     type: "POST",
     data : { 'username' : 'Ramesh Pal'},
@@ -17,4 +18,6 @@
 	
 </script>
 <h1>Welcome , You have done a good job.</h1>
+<form>{% csrf_token %}</form>
+
 <button onclick="getfarmersdetails()">Click here to get farmers details.</button>
