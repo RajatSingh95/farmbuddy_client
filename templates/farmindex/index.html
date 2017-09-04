@@ -11,7 +11,8 @@
     success: function(data)
     {
         //data - response from server
-	console.log(data);
+		console.log(data);
+		$('#request').html(data.farmer_detail);
     }
 });	
 	}
@@ -20,3 +21,4 @@
 <h1>Welcome , You have done a good job.</h1>
 
 <button onclick="getfarmersdetails()">Click here to get farmers details.</button>
+<div id='request'></div>
