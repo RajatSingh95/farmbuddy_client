@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  {% load static %}
   <head>
 
     <meta charset="utf-8">
@@ -11,15 +11,15 @@
     <title>Freelancer - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ STATIC_URL }}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static vendor/bootstrap/css/bootstrap.min.css %}" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="{{ STATIC_URL }}vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{% static vendor/font-awesome/css/font-awesome.min.css %}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="{{ STATIC_URL }}css/freelancer.min.css" rel="stylesheet">
+    <link href="{% static css/freelancer.min.css %}" rel="stylesheet">
 
   </head>
 
@@ -51,9 +51,9 @@
       <div class="container">
 	<div style="display: inline-block;">
         
-	<img class="img-fluid" src="{{ STATIC_URL }}img/landlord.png" alt="" style="display: inline-block;">
-	<img class="img-fluid" src="{{ STATIC_URL }}img/farmer.jpg" alt="" style="display: inline-block;">	
-	<img class="img-fluid" src="{{ STATIC_URL }}img/admin.png" alt="" style="display: inline-block;">
+	<img class="img-fluid" src="{% static img/landlord.png %}" alt="" style="display: inline-block;">
+	<img class="img-fluid" src="{% static img/farmer.jpg %}" alt="" style="display: inline-block;">	
+	<img class="img-fluid" src="{% static img/admin.png %}" alt="" style="display: inline-block;">
 	</div>
         <div class="intro-text">
           <span class="name">FarmBuddy</span>
@@ -141,21 +141,21 @@
       </a>
     </div>
 
-  
+    {% load static %}
     <!-- Bootstrap core JavaScript -->
-    <script src="{{ STATIC_URL }}vendor/jquery/jquery.min.js"></script>
-    <script src="{{ STATIC_URL }}vendor/popper/popper.min.js"></script>
-    <script src="{{ STATIC_URL }}vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static vendor/jquery/jquery.min.js %}"></script>
+    <script src="{% static vendor/popper/popper.min.js %}"></script>
+    <script src="{% static vendor/bootstrap/js/bootstrap.min.js %}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="{{ STATIC_URL }}vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{% static vendor/jquery-easing/jquery.easing.min.js %}"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="{{ STATIC_URL }}js/jqBootstrapValidation.js"></script>
-    <script src="{{ STATIC_URL }}js/contact_me.js"></script>
+    <script src="{% static js/jqBootstrapValidation.js %}"></script>
+    <script src="{% static js/contact_me.js %}"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="{{ STATIC_URL }}js/freelancer.min.js"></script>
+    <script src="{% static js/freelancer.min.js %}"></script>
 
   </body>
 
