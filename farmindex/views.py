@@ -8,6 +8,9 @@ from django.http import HttpResponse
 def index(request):
 	return render(request, 'farmindex/index.html')
 
+def fetch(request):
+	return render(request, 'farmindex/index_pre.html')
+
 
 
 
