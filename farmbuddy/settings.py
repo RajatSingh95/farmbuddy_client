@@ -27,7 +27,7 @@ SECRET_KEY = 'h(6)w&ru8&un@8f*=4&8-()^y%sznezi9h71mh#(g6m!iaq+n0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['farmbuddy-client.herokuapp.com','127.0.0.1','10.0.3.23:']
+ALLOWED_HOSTS = ['farmbuddy-client.herokuapp.com','127.0.0.1','10.0.3.23']
 
 
 # Application definition
