@@ -27,7 +27,7 @@ SECRET_KEY = 'h(6)w&ru8&un@8f*=4&8-()^y%sznezi9h71mh#(g6m!iaq+n0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['farmbuddy-client.herokuapp.com','127.0.0.1:8000']
+ALLOWED_HOSTS = ['farmbuddy-client.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -122,7 +122,7 @@ USE_TZ = True
 
 
 
-DATABASES['default'].update(db_from_env)
+#DATABASES['default'].update(db_from_env)
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
