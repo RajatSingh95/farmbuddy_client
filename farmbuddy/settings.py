@@ -15,8 +15,8 @@ import os.path
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
+#import dj_database_url
+#db_from_env = dj_database_url.config(conn_max_age=500)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -27,7 +27,7 @@ SECRET_KEY = 'h(6)w&ru8&un@8f*=4&8-()^y%sznezi9h71mh#(g6m!iaq+n0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['farmbuddy-client.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['farmbuddy-client.herokuapp.com','127.0.0.1','10.0.3.23:8015']
 
 
 # Application definition
