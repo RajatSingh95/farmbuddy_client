@@ -1,6 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-	function getfarmersdetails(){
+	function getmapdetails(){
 		console.log('send request');
 		$.ajax({
     url : "http://10.0.3.23:8017/restapi/mapdetail/",
@@ -24,5 +24,5 @@
 </script>
 <h1>CLick to Get Map!</h1>
 
-<button onclick=getmapdetails()">Click here to get farmers details.</button>
+<button onclick="getmapdetails()">Click here to get farmers details.</button>
 <div id='request'></div>
