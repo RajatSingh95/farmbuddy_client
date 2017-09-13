@@ -21,6 +21,35 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static "css/freelancer.min.css" %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	function login(){
+		console.log('send request');
+		var user=document.getElementById('username');
+		var pass=document.getElementById('password');
+		$.ajax({
+    url : "http://10.0.3.23:8017/restapi/logindetail/",
+    type: "POST",
+	dataType: 'json',
+    data : { 'username' : user, 'password' : pass , "csrfmiddlewaretoken": '{{ csrf_token }}' },
+    success: function(data)
+    {
+        //data - response from server
+	    if(data.login==='success'){
+		    window.location.href="http://10.0.3.23:8015/farmindex/landlord/";
+	    }
+		console.log(data);
+		$('#request').html(data.farmer_detail);
+    }
+});	
+	}
+	
+</script>
+	  <script >
+	function login_model(){
+		$('#modelWindow').modal('show');
+	}
+    </script>
 
   </head>
 
@@ -132,6 +161,27 @@
         </div>
       </div>
     </section>
+	  
+<div class="modal fade" id="modelWindow" role="dialog">
+            <div class="modal-dialog modal-sm vertical-align-center">
+              <div class="modal-content">
+                <div class="modal-header">
+		  <center> <h4 class="modal-title">Login</h4> <center>
+                  
+                </div>
+                <div class="modal-body">
+                    <center>
+			<input type="text" name="username" id='username' placeholder="Username" >
+		    	<input type="password" name="password" id='password' placeholder="Password" >
+		    </center>
+                </div>
+                <div class="modal-footer">
+		    <button type="button" class="btn btn-primary">Login</button>
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
 
     <!-- Footer -->
    
