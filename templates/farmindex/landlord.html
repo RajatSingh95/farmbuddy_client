@@ -13,9 +13,9 @@
 	        
 	        var obj = JSON.parse(data.farmer_detail);
 	    	console.log('Hello '+ obj);
-	    	var filter=JSON.parse(obj);
-	    	console.log('Filter '+ filter);
-
+	    	//var filter=JSON.parse(obj);
+	    	//console.log('Filter '+ filter);
+		alert(JSON.stringify(obj));
 	    	for (var i = 0, len = obj.length; i < len; ++i) {
      			var loc = obj[i];
 			console.log(loc);
