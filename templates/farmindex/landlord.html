@@ -1,1 +1,23 @@
-<h1>hello</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	function getfarmersdetails(){
+		console.log('send request');
+		$.ajax({
+    url : "http://10.0.3.23:8017/restapi/mapdetail/",
+    type: "POST",
+	dataType: 'geojson',
+    data : { 'username' : 'Ramesh Pal', "csrfmiddlewaretoken": '{{ csrf_token }}' },
+    success: function(data)
+    {
+        //data - response from server
+		console.log(data);
+		$('#request').html(data.farmer_detail);
+    }
+});	
+	}
+	
+</script>
+<h1>Welcome , You have done a good job.</h1>
+
+<button onclick="getfarmersdetails()">Click here to get farmers details.</button>
+<div id='request'></div>
