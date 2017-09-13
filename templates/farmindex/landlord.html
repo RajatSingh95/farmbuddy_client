@@ -10,6 +10,11 @@
     success: function(data)
     {
         //data - response from server
+	        var obj = JSON.parse(data.farmer_detail);
+	    	for (var i = 0, len = obj.length; i < len; ++i) {
+     			var loc = obj[i];
+			console.log(loc);
+ 		}
 		console.log(data);
 		$('#request').html(data.farmer_detail);
     }
