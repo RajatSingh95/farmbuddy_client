@@ -18,6 +18,8 @@
 		//alert(JSON.stringify(obj));
 	        var filter=JSON.stringify(obj);
 	    	console.log('filter: ' + filter);
+	    	var loc=JSON.parse(filter);
+	        console.log('filter-len: ' + loc.length);
 	        console.log('length: ' + filter.length);
 	    	
 	    	for (var i = 0, len = obj.length; i < len; ++i) {
