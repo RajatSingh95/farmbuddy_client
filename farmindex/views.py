@@ -11,6 +11,9 @@ def index(request):
 def fetch(request):
 	return render(request, 'farmindex/index_pre.html')
 
+def fetch(request):
+	return render(request, 'farmindex/landlord.html')
+
 
 
 
