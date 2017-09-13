@@ -13,11 +13,12 @@
 	        
 	        var obj = JSON.parse(data.farmer_detail);
 	    	console.log('Hello '+ obj);
+	    	
 	    	//var filter=JSON.parse(obj);
 	    	//console.log('Filter '+ filter);
 		//alert(JSON.stringify(obj));
 	        var filter=JSON.stringify(obj);
-	    	console.log('filter: ' + filter);
+	    	console.log('filter: ' + filter[0]);
 	    	var loc=JSON.parse(filter);
 	        console.log('filter-len: ' + loc.length);
 	        console.log('length: ' + filter.length);
