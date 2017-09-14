@@ -23,8 +23,11 @@
 	        for (var i = 0, len = obj.features.length; i < len; ++i) {
      			var loc =obj.features[i].geometry.coordinates ;
 			for (var j = 0, leng = loc.length; j < leng; ++j) {
-     			
+     			  var lat=loc[j];
 			console.log(loc[j]);
+				console.log('lat'+ lat[0]);
+				console.log('lon'+ lat[1]);
+				
  			}
 			console.log(loc);
  		}
