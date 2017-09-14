@@ -1,4 +1,8 @@
+{% load static %}
+<script type="text/javascript" src ="https://maps.googleapis.com/maps/api/js" ></script>
+<script type="text/javascript" src="{% static 'js/gmaps.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script>
 	function gethouseholddetails(){
 		console.log('send request');
@@ -9,6 +13,44 @@
     data : { 'username' : 'Ramesh Pal', "csrfmiddlewaretoken": '{{ csrf_token }}' },
     success: function(data)
     {
+	       var obj = JSON.parse(data.farmer_detail);
+	    	console.log('Hello '+ obj);
+	    	
+	    	//var filter=JSON.parse(obj);
+	    	//console.log('Filter '+ filter);
+		//alert(JSON.stringify(obj));
+	        //var filter=JSON.stringify(obj);
+	    	console.log('filter: ' + obj.features);
+	        console.log('filter-len: ' + obj.features.length);
+	    	var map = new GMaps({
+					el: '#map',
+        				lat: 16.008855935618726,
+        				lng: 79.7167968639029,
+					click: function(e){
+					  console.log(e);
+					}
+					});
+	        for (var i = 0, len = obj.features.length; i < len; ++i) {
+     			var loc =obj.features[i].geometry.coordinates ;
+			
+			console.log(loc[1]);
+			 map.addMarker({
+        lat: loc[1],
+        lng: loc[0],
+        title: 'Marker with Info ' + obj.features[i].properties.pk,
+        infoWindow: {
+          content: '<p>House No. </p>'+obj.features[i].properties.pk
+        }
+      });
+ 		}
+	    	/*var loc=JSON.parse(filter);
+	        console.log('filter-len: ' + loc.length);
+	        console.log('length: ' + filter.length);
+	    	*/
+	    	for (var i = 0, len = obj.length; i < len; ++i) {
+     			var loc = obj[i];
+			console.log(loc);
+ 		}
         //data - response from server
 		console.log(data);
 		$('#request').html(data.farmer_detail);
@@ -17,7 +59,9 @@
 	}
 	
 </script>
-<h1>Welcome , You have done a good job.</h1>
+<h1>Click to see the houses location..</h1>
 
-<button onclick="gethouseholddetails()">Click here to get farmers details.</button>
+<button onclick="gethouseholddetails()">Click here to get house location.</button>
 <div id='request'></div>
+<div id = "map" style= "width :900px;height: 900px;" >
+</div>
