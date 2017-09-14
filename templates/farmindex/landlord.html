@@ -1,4 +1,10 @@
+{% load static %}
+<script type="text/javascript" src ="https://maps.googleapis.com/maps/api/js" ></script>
+<script type="text/javascript" src="{% static 'index/gmaps.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
 <script>
 	function getmapdetails(){
 		console.log('send request');
@@ -28,6 +34,21 @@
 					console.log('latitude '+lat[k][0]);
 					console.log('longitude '+lat[k][1]);
 				}
+				var path=loc[j];
+				
+					var map = new GMaps({
+					el: '#map'
+					});
+					polygon = map.drawPolygon({
+						  paths: path, // pre-defined polygon shape
+						  strokeColor: '#BBD8E9',
+						  strokeOpacity: 1,
+						  strokeWeight: 3,
+						  fillColor: '#BBD8E9',
+						  fillOpacity: 0.6
+						});
+			
+				
 			console.log(loc[j]);
 				console.log('lat'+ lat[0]);
 				console.log('lon'+ lat[1]);
@@ -54,3 +75,48 @@
 
 <button onclick="getmapdetails()">Click here to get farmers details.</button>
 <div id='request'></div>
+<div id = "map" style= "width :400px;height: 200px;" >
+</div>
+
+<script>
+
+// var t = null;
+// function gethouseholddetails(){
+// 		console.log('send request');
+// 		$.ajax({
+// //    url : "http://10.0.3.23:8028/restapi/landlorddetail/",
+//     url : "http://127.0.0.1:8000/mapsapp/householddetail/",
+//     type: "POST",
+// 	dataType: 'json',
+//     data : { 'username' : 'Avenash', "csrfmiddlewaretoken": '{{ csrf_token }}' },
+//     success: function(data)
+//     {
+//         //data - response from server
+//         console.log(data);
+//         t = JSON.parse(data.household_detail);
+//         $('#request').html(data.household_detail);
+//         var map = new GMaps({
+//         el: '#map',
+//         lat: t.features[0].geometry.coordinates[1],
+//         lng: t.features[0].geometry.coordinates[0],
+        
+//         });
+//         map.addMarker({
+//         lat: t.features[0].geometry.coordinates[1],
+//         lng: t.features[0].geometry.coordinates[0],
+//         title: 'Lima',
+//         click: function(e) {
+//             alert('You clicked in this marker');
+//         }
+//         });
+//     }
+
+// });	
+// }
+    
+ </script>
+<!-- <h1>Household Data in JSON format</h1>
+// <button onclick="gethouseholddetails()">Household's data</button>
+
+// <div id='request'></div> -->
+
