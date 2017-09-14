@@ -27,28 +27,14 @@
 		console.log('send request');
 		var user=document.getElementById('username');
 		var pass=document.getElementById('password');
-		if(user==='9651999200' && pass='9651999200'){
+		if(user==='9651999200' && pass==='9651999200'){
 			window.location.href="http://10.0.3.23:8015/farmindex/landlord/";
 		}
 		else{
 			alert('wrong credentials!');
 		}
 		
-		/*$.ajax({
-    url : "http://10.0.3.23:8017/restapi/logindetail/",
-    type: "POST",
-	dataType: 'json',
-    data : { 'username' : user, 'pswd' : pass , "csrfmiddlewaretoken": '{{ csrf_token }}' },
-    success: function(data)
-    {
-        //data - response from server
-	    if(data.login==='success'){
-		    window.location.href="http://10.0.3.23:8015/farmindex/landlord/";
-	    }
-		console.log(data);
-		$('#request').html(data.farmer_detail);
-    }
-});*/	
+		
 	}
 	
 </script>
@@ -171,7 +157,7 @@
         </div>
       </div>
     </section>
-	  
+
 <div class="modal fade" id="modelWindow" role="dialog">
             <div class="modal-dialog modal-sm vertical-align-center">
               <div class="modal-content">
@@ -186,7 +172,7 @@
 		    </center>
                 </div>
                 <div class="modal-footer">
-		    <button type="button" class="btn btn-primary">Login</button>
+		    <button type="button" class="btn btn-primary" onclick="login()">Login</button>
                     <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
                 </div>
               </div>
