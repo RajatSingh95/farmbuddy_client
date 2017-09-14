@@ -26,6 +26,14 @@
 	        //var filter=JSON.stringify(obj);
 	    	console.log('filter: ' + obj.features);
 	        console.log('filter-len: ' + obj.features.length);
+	    	var map = new GMaps({
+					el: '#map',
+        				lat: -12.040397656836609,
+        				lng: -77.03373871559225,
+					click: function(e){
+					  console.log(e);
+					}
+					});
 	        for (var i = 0, len = obj.features.length; i < len; ++i) {
      			var loc =obj.features[i].geometry.coordinates ;
 			for (var j = 0, leng = loc.length; j < leng; ++j) {
@@ -36,14 +44,7 @@
 				}
 				var path = [[-12.040397656836609,-77.03373871559225], [-12.040248585302038,-77.03993927003302], [-12.050047116528843,-77.02448169303511],	[-12.044804866577001,-77.02154422636042]];
 				
-					var map = new GMaps({
-					el: '#map',
-        				lat: -12.040397656836609,
-        				lng: -77.03373871559225,
-					click: function(e){
-					  console.log(e);
-					}
-					});
+					
 					map.drawPolygon({
 						  paths: path, // pre-defined polygon shape
 						  strokeColor: '#BBD8E9',
@@ -60,6 +61,13 @@
 				
  			}
 			console.log(loc);
+			 map.drawPolygon({
+				paths: loc,
+				useGeoJSON: true,
+				strokeColor: '#131540',
+				strokeOpacity: 0.6,
+				strokeWeight: 6
+			      });
  		}
 	    	/*var loc=JSON.parse(filter);
 	        console.log('filter-len: ' + loc.length);
@@ -80,7 +88,7 @@
 
 <button onclick="getmapdetails()">Click here to get farmers details.</button>
 <div id='request'></div>
-<div id = "map" style= "width :400px;height: 200px;" >
+<div id = "map" style= "width :900px;height: 900px;" >
 </div>
 
 <script>
