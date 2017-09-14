@@ -14,6 +14,9 @@ def fetch(request):
 def landlord(request):
 	return render(request, 'farmindex/landlord.html')
 
+def household(request):
+	return render(request, 'farmindex/household.html')
+
 
 
 
