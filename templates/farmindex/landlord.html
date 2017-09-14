@@ -24,6 +24,10 @@
      			var loc =obj.features[i].geometry.coordinates ;
 			for (var j = 0, leng = loc.length; j < leng; ++j) {
      			  var lat=loc[j];
+				for (var k = 0, lengt = lat.length; k < lengt; ++k) {
+					console.log('latitude '+lat[k].lat());
+					console.log('longitude '+lat[k].lon());
+				}
 			console.log(loc[j]);
 				console.log('lat'+ lat[0]);
 				console.log('lon'+ lat[1]);
