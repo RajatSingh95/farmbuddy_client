@@ -26,8 +26,15 @@
 	function login(){
 		console.log('send request');
 		var user=document.getElementById('username');
-		var pass='9651999200';
-		$.ajax({
+		var pass=document.getElementById('password');
+		if(user==='9651999200' && pass='9651999200'){
+			window.location.href="http://10.0.3.23:8015/farmindex/landlord/";
+		}
+		else{
+			alert('wrong credentials!');
+		}
+		
+		/*$.ajax({
     url : "http://10.0.3.23:8017/restapi/logindetail/",
     type: "POST",
 	dataType: 'json',
@@ -41,7 +48,7 @@
 		console.log(data);
 		$('#request').html(data.farmer_detail);
     }
-});	
+});*/	
 	}
 	
 </script>
