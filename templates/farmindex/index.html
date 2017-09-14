@@ -31,7 +31,7 @@
     url : "http://10.0.3.23:8017/restapi/logindetail/",
     type: "POST",
 	dataType: 'json',
-    data : { 'username' : user, 'password' : pass , "csrfmiddlewaretoken": '{{ csrf_token }}' },
+    data : { 'username' : user, 'pswd' : pass , "csrfmiddlewaretoken": '{{ csrf_token }}' },
     success: function(data)
     {
         //data - response from server
