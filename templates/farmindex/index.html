@@ -25,14 +25,15 @@
 <script>
 	function login(){
 		console.log('send request');
-		var user=document.getElementById('username');
-		var pass=document.getElementById('password');
+		var user=document.getElementById('username').value;
+		var pass=document.getElementById('password').value;
 		if(user==='9651999200' && pass==='9651999200'){
 			window.location.href="http://10.0.3.23:8015/farmindex/landlord/";
 		}
 		else{
 			alert(user + ' : ' + pass );
 		}
+		
 		
 		
 	}
