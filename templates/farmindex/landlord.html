@@ -46,7 +46,10 @@
         lng: lat[k][0],
         title: 'Land with Info ',
         infoWindow: {
-          content: '<p>Land No. </p>'
+          content: '<p>Land Area : '+obj.features[i].properties.area+ '</p>' +
+		    '<p>Land No: '+obj.features[i].properties.pk+ '</p>'+
+			'<br>' +
+		    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> Land Image'
         }
       });
 				}
