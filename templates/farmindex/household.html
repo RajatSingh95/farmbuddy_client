@@ -39,7 +39,8 @@
         lng: loc[0],
         title: 'Marker with Info ' + obj.features[i].properties.pk,
         infoWindow: {
-          content: '<p>House No. </p>'+obj.features[i].properties.pk
+          content: '<p>House No. </p>'+obj.features[i].properties.pk + '<br>' +
+		    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
         }
       });
  		}
