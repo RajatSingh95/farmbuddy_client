@@ -2,7 +2,11 @@
 <script type="text/javascript" src ="https://maps.googleapis.com/maps/api/js" ></script>
 <script type="text/javascript" src="{% static 'js/gmaps.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<script>
+function statistic(){
+	console.log("Entered Statistic");
+}
+</script>
 
 
 <script>
@@ -49,7 +53,8 @@
           content: '<p>Land Area : '+obj.features[i].properties.area+ '</p>' +
 		    '<p>Land No: '+obj.features[i].properties.pk+ '</p>'+
 			'<br>' +
-		    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> Land Image'
+		    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> Land Image'+
+		    '<button onclick="statistic('+obj.features[i].properties.pk+')">Get Crop Details</button>'
         }
       });
 				}
