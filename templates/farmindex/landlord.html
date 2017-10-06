@@ -2,9 +2,59 @@
 <script type="text/javascript" src ="https://maps.googleapis.com/maps/api/js" ></script>
 <script type="text/javascript" src="{% static 'js/gmaps.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script>
 function statistic(val){
 	console.log("Entered Statistic"+ val);
+
+	var chart = new CanvasJS.Chart("graph", {
+	animationEnabled: true,
+	
+	title:{
+		text:"Fortune 500 Companies by Country"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Number of Companies"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: 3, label: "Sweden" },
+			{ y: 7, label: "Taiwan" },
+			{ y: 5, label: "Russia" },
+			{ y: 9, label: "Spain" },
+			{ y: 7, label: "Brazil" },
+			{ y: 7, label: "India" },
+			{ y: 9, label: "Italy" },
+			{ y: 8, label: "Australia" },
+			{ y: 11, label: "Canada" },
+			{ y: 15, label: "South Korea" },
+			{ y: 12, label: "Netherlands" },
+			{ y: 15, label: "Switzerland" },
+			{ y: 25, label: "Britain" },
+			{ y: 28, label: "Germany" },
+			{ y: 29, label: "France" },
+			{ y: 52, label: "Japan" },
+			{ y: 103, label: "China" },
+			{ y: 134, label: "US" }
+		]
+	}]
+});
+chart.render();
+
+}
+
+
+
+
 }
 </script>
 
@@ -110,9 +160,9 @@ function statistic(val){
 
 <button onclick="getmapdetails()">Click here to get farms locations.</button>
 <div id='request'></div>
-<div id = "map" style= "width :900px;height: 900px;display:inline-block;" >
+<div id = "map" style= "width :500px;height: 500px;display:inline-block;" >
 </div>
-<div id="graph" style="display:inline-block;">heloo</div>
+<div id="graph" style="display:inline-block;height: 600px; width:400px ;">heloo</div>
 <script>
 
 // var t = null;
