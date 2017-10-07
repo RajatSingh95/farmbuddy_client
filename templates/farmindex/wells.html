@@ -2,6 +2,7 @@
 <html>
 {% load static %}
 <link rel="stylesheet" href ="{% static 'Cesium-1.38/Build/Cesium/Widgets/widgets.css' %}"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
 	html,body,#cesiumContainer{
 		width: 100%;height: 100%;margin: 0;padding: 0;overflow: hidden;
@@ -17,21 +18,95 @@
 <script src="{% static 'Cesium-1.38/Build/Cesium/Cesium.js' %}"></script>
 <script src="{% static 'Cesium-1.38/Build/Cesium/Widgets/widgets.css' %}"></script>
 <script type="text/javascript">
-	var viewer = new Cesium.Viewer('cesiumContainer');
 
-	var greenCylinder = viewer.entities.add({
-    name : 'Green cylinder with black outline',
-    position: Cesium.Cartesian3.fromDegrees(-100.0, 40.0, 200000.0),
-    cylinder : {
-        length : 400000.0,
-        topRadius : 200000.0,
-        bottomRadius : 200000.0,
-        material : Cesium.Color.GREEN.withAlpha(0.5),
-        outline : true,
-        outlineColor : Cesium.Color.DARK_GREEN
+
+
+//////////////////////////////////
+
+$.ajax({
+    url : "http://10.0.3.23:8017/restapi/welldetail/",
+    type: "POST",
+	dataType: 'json',
+    data : { 'username' : 'Ramesh Pal', "csrfmiddlewaretoken": '{{ csrf_token }}' },
+    success: function(data)
+    {
+	       var obj = JSON.parse(data.well_detail);
+	    	console.log('Hello '+ obj);
+		var viewer = new Cesium.Viewer('cesiumContainer');    	
+	    	//var filter=JSON.parse(obj);
+	    	//console.log('Filter '+ filter);
+		//alert(JSON.stringify(obj));
+	        //var filter=JSON.stringify(obj);
+	    	console.log('filter: ' + obj.features);
+	        console.log('filter-len: ' + obj.features.length);
+	        for (var i = 0, len = obj.features.length; i < len; ++i) {
+     			var loc =obj.features[i].geometry.coordinates ;
+			
+			console.log(loc[1],loc[0]);
+			//cesium
+
+				var greenCylinder = viewer.entities.add({
+    				name : 'Green cylinder with black outline',
+    				position: Cesium.Cartesian3.fromDegrees(loc[1], loc[0], 200000.0),
+    				cylinder : {
+        				length : obj.features[i].properties.depth,
+					topRadius : 200000.0,
+					bottomRadius : 200000.0,
+					material : Cesium.Color.GREEN.withAlpha(0.5),
+					outline : true,
+					outlineColor : Cesium.Color.DARK_GREEN
+    					}
+				});
+				viewer.zoomTo(viewer.entities);							
+
+
+			///
+
+
+
+
+
+			 /*map.addMarker({
+        lat: loc[1],
+        lng: loc[0],
+	icon: "http://10.0.3.23:8017/media/images/houses/home.png",
+        title: 'Marker with Info ' + obj.features[i].properties.pk,
+	size: 'large',
+        infoWindow: {
+          content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+		    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+		    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+		    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+        }
+      });
+		*/
+ 		}
+	    	/*var loc=JSON.parse(filter);
+	        console.log('filter-len: ' + loc.length);
+	        console.log('length: ' + filter.length);
+	    	*/
+	    	for (var i = 0, len = obj.length; i < len; ++i) {
+     			var loc = obj[i];
+			console.log(loc);
+ 		}
+        //data - response from server
+		console.log(data);
+		//$('#request').html(data.well_detail);
     }
-	});
-	viewer.zoomTo(viewer.entities);
+});	
+
+
+
+//////////////////////////////////
+
+
+
+
+
+
+	
+
+	
 </script>
 </body>
 </html>
