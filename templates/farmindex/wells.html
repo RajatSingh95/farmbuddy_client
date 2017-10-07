@@ -46,7 +46,7 @@ $.ajax({
 			//cesium
 
 				var greenCylinder = viewer.entities.add({
-    				name : 'Depth: '+obj.features[i].properties.depth+'  Yield: '+obj.features[i].properties.Yield,
+    				name : 'Depth: '+obj.features[i].properties.depth+'ft.  Yield: '+obj.features[i].properties.Yield+' ltrs',
     				position: Cesium.Cartesian3.fromDegrees(loc[0], loc[1], (obj.features[i].properties.depth)/2 ),
     				cylinder : {
         				length : obj.features[i].properties.depth,
