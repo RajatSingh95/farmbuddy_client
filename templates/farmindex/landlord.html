@@ -6,9 +6,15 @@
 <script>
 function statistic(val){
 	console.log("Entered Statistic"+ val);
-	
+	$.ajax({
+    		url : "http://10.0.3.23:8017/restapi/cropdetail/",
+    		type: "POST",
+		dataType: 'json',
+    		data : { 'farm_id' : val, "csrfmiddlewaretoken": '{{ csrf_token }}' },
+    success: function(data)
+    {	
 
-	var chart = new CanvasJS.Chart("graph", {
+	/*var chart = new CanvasJS.Chart("graph", {
 	animationEnabled: true,
 	
 	title:{
@@ -50,7 +56,10 @@ function statistic(val){
 	}]
 });
 chart.render();
-
+*/
+	console.log(data);
+}
+});
 
 }
 </script>
