@@ -12,8 +12,10 @@ function statistic(val){
 		dataType: 'json',
     		data : { 'farm_id' : val, "csrfmiddlewaretoken": '{{ csrf_token }}' },
     success: function(data)
-    {	
-
+    {
+		
+	var obj = JSON.parse(data.crops_detail);
+	    	console.log('Hello '+ obj);
 	/*var chart = new CanvasJS.Chart("graph", {
 	animationEnabled: true,
 	
