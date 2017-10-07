@@ -101,7 +101,27 @@ chart_pie.render();
 
 }
 </script>
-
+<style>
+#map {
+	width :100%;
+	height: 650px;
+	background-color:green;
+	position:relative;
+	margin-top:-400px;
+}
+#graph{
+	height: 400px; 
+	width:400px ;
+	background-color:yellow;
+	float:left;
+}
+#pie{
+	height: 400px; 
+	width:400px;
+	background-color:orange;	
+	margin-left:876px;
+}
+</style>
 
 <script>
 	function getmapdetails(){
@@ -204,10 +224,10 @@ chart_pie.render();
 
 <button onclick="getmapdetails()">Click here to get farms locations.</button>
 <div id='request'></div>
-<div id = "map" style= "width :650px;height: 650px;display:inline-block;" >
+<div id = "map" style= "display:inline-block;" >
 </div>
-<div id="graph" style="display:inline-block;height: 400px; width:400px ;">heloo</div>
-<div id="pie" style="display:inline-block;height: 400px; width:400px ;">heloo</div>
+<div id="graph" style="display:inline-block;">heloo</div>
+<div id="pie" style="display:inline-block;">heloo</div>
 <script>
 
 // var t = null;
