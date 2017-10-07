@@ -86,7 +86,7 @@ var chart_pie = new CanvasJS.Chart("pie", {
 	data: [{
 		type: "pie",
 		startAngle: 240,
-		yValueFormatString: "##0.00\"%\"",
+		yValueFormatString: "##0.00\"Deg\"",
 		indexLabel: "{label} {y}",
 		dataPoints: pie_dict
 	}]
@@ -212,7 +212,7 @@ chart_pie.render();
 			console.log(loc);
  		}
 		console.log(data);
-		$('#request').html(data.farmer_detail);
+		//$('#request').html(data.farmer_detail);
     }
 });	
 	}
