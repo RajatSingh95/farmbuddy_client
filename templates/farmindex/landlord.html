@@ -29,7 +29,25 @@ function statistic(val){
 		
 	
 	}
+
+
+
+
+	var pie_dict = []; // create an empty array
+
+	
+	for (var i = 0, len = obj.length; i < len; ++i) {
+		
+		console.log(obj[i].pk + ':# ' + obj[i].fields.Year );
+		pie_dict.push({
+    		y: obj[i].fields.Yield  ,
+    		label:obj[i].fields.Year
+		});
+		
+	
+	}
 	console.log("## "+ dict);
+//////////////////////////////////////////////////// Bar Graph
 	var chart = new CanvasJS.Chart("graph", {
 	animationEnabled: true,
 	
@@ -53,8 +71,31 @@ function statistic(val){
 	}]
 });
 chart.render();
-
+/////////////////////////////////////////////////////
 	console.log(data);
+
+
+///////////////////////////////////////////////// Pie Chart
+
+
+var chart_pie = new CanvasJS.Chart("pie", {
+	animationEnabled: true,
+	title: {
+		text: "Crop Yield (Year Wise)"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 240,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
+		dataPoints: pie_dict
+	}]
+});
+chart_pie.render();
+
+
+
+///////////////////////////////////////////////////////////
 }
 });
 
@@ -165,7 +206,8 @@ chart.render();
 <div id='request'></div>
 <div id = "map" style= "width :650px;height: 650px;display:inline-block;" >
 </div>
-<div id="graph" style="display:inline-block;height: 600px; width:400px ;">heloo</div>
+<div id="graph" style="display:inline-block;height: 400px; width:400px ;">heloo</div>
+<div id="pie" style="display:inline-block;height: 400px; width:400px ;">heloo</div>
 <script>
 
 // var t = null;
