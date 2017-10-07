@@ -16,12 +16,20 @@ function statistic(val){
 		
 	var obj = JSON.parse(data.crops_detail);
 	    	console.log('Hello '+ obj);
+	var dict = []; // create an empty array
+
+	
 	for (var i = 0, len = obj.length; i < len; ++i) {
 		
 		console.log(obj[i].pk + ':# ' + obj[i].fields.Year );
+		dict.push({
+    		y: obj[i].fields.Yield  ,
+    		label: obj[i].fields.Name + ': ' +obj[i].fields.Year
+		});
 		
 	
 	}
+	console.log("## "+ dict);
 	/*var chart = new CanvasJS.Chart("graph", {
 	animationEnabled: true,
 	
