@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^datafetch/', views.fetch, name='fetch'),
     url(r'^landlord/', views.landlord, name='landlord'),
     url(r'^household/', views.household, name='household'),
+    url(r'^wells/', views.wells, name='wells'),
     
     
 ]

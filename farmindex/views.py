@@ -17,6 +17,9 @@ def landlord(request):
 def household(request):
 	return render(request, 'farmindex/household.html')
 
+def wells(request):
+	return render(request, 'farmindex/wells.html')
+
 
 
 
