@@ -40,9 +40,9 @@
 	icon: "http://10.0.3.23:8017/media/images/houses/home.png",
         title: 'Marker with Info ' + obj.features[i].properties.pk,
         infoWindow: {
-          content: '<p>House No. '+obj.features[i].properties.pk + '</p><br>' +
-		    '<p>Members '+obj.features[i].properties.Members + '</p><br>'+
-		    '<p>Income '+obj.features[i].properties.Income + '</p><br>'+
+          content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+		    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+		    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
 		    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
         }
       });
