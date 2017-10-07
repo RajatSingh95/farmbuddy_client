@@ -20,6 +20,9 @@ def household(request):
 def wells(request):
 	return render(request, 'farmindex/wells.html')
 
+def mainpage(request):
+	return render(request, 'farmindex/mainpage.html')
+
 
 
 
