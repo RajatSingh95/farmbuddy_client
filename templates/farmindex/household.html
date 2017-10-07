@@ -39,7 +39,7 @@
         lng: loc[0],
 	icon: "http://10.0.3.23:8017/media/images/houses/home.png",
         title: 'Marker with Info ' + obj.features[i].properties.pk,
-	size: obj.features[i].properties.Members,
+	size: 'large',
         infoWindow: {
           content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
 		    '<p>Members '+obj.features[i].properties.Members + '</p>'+
