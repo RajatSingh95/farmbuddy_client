@@ -47,6 +47,62 @@
 						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
 					}
       			});
+				if(obj.features[i].properties.Income<30000){
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/reddot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+				
+				else if(obj.features[i].properties.Income>30000 && obj.features[i].properties.Income<55000){
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/bluedot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+				
+				else{
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/greendot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+
+
+
 			}
 			else if(obj.features[i].properties.Members >=8 && obj.features[i].properties.Members <=13){
 			
@@ -64,6 +120,65 @@
 					}
       			});	
 
+
+				if(obj.features[i].properties.Income<30000){
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/reddot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+				
+				else if(obj.features[i].properties.Income>30000 && obj.features[i].properties.Income<55000){
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/bluedot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+				
+				else{
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/greendot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+
+
+
+
+
 			}
 			else{
 			
@@ -80,6 +195,62 @@
 						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
 					}
       			});
+			
+			if(obj.features[i].properties.Income<30000){
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/reddot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+				
+				else if(obj.features[i].properties.Income>30000 && obj.features[i].properties.Income<55000){
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/bluedot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+				
+				else{
+					 map.addMarker({
+					lat: loc[1],
+					lng: loc[0],
+					icon: "http://10.0.3.23:8017/media/images/houses/greendot.jpg",
+					title: 'Marker with Info ' + obj.features[i].properties.pk,
+					size: 'large',
+					infoWindow: {
+					  content: '<p>House No. '+obj.features[i].properties.pk + '</p>' +
+						    '<p>Members '+obj.features[i].properties.Members + '</p>'+
+						    '<p>Income: Rs. '+obj.features[i].properties.Income + '</p>'+
+						    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> House Image'
+					}
+      			});
+					
+				
+				}
+
+
 				
 			}
  		}
