@@ -23,7 +23,7 @@ function statistic(val){
 		
 		console.log(obj[i].pk + ':# ' + obj[i].fields.Year );
 		dict.push({
-    		y: obj[i].fields.Yield  ,
+    		y: obj[i].fields.Yield +' tonnes' ,
     		label: obj[i].fields.Name + ': ' +obj[i].fields.Year
 		});
 		
@@ -162,7 +162,7 @@ chart_pie.render();
         lng: lat[k][0],
         title: 'Land with Info ',
         infoWindow: {
-          content: '<p>Land Area : '+obj.features[i].properties.area+ '</p>' +
+          content: '<p>Land Area : '+obj.features[i].properties.area+ ' sq. mtrs</p>' +
 		    '<p>Land No: '+obj.features[i].properties.pk+ '</p>'+
 			'<br>' +
 		    '<img src="http://10.0.3.23:8017/media/'+obj.features[i].properties.file+'"> Land Image'+
