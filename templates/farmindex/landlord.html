@@ -23,7 +23,7 @@ function statistic(val){
 		
 		console.log(obj[i].pk + ':# ' + obj[i].fields.Year );
 		dict.push({
-    		y: obj[i].fields.Yield +' tonnes' ,
+    		y: obj[i].fields.Yield ,
     		label: obj[i].fields.Name + ': ' +obj[i].fields.Year
 		});
 		
@@ -60,7 +60,7 @@ function statistic(val){
 	axisY2:{
 		interlacedColor: "rgba(1,77,101,.2)",
 		gridColor: "rgba(1,77,101,.1)",
-		title: "Yield"
+		title: "Yield in tonnes"
 	},
 	data: [{
 		type: "bar",
