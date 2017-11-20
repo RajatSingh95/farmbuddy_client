@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponse
 import requests
-
+import json
 
 # It renders the landing Page of the website.
 def index(request):
@@ -17,10 +17,11 @@ def login(request):
 		credentials={'mobile':mobile, 'pass': password}
 		response = requests.post('http://10.0.3.23:8017/restapi/logindetail/', data=credentials)
 		print(response.content)
-		print(response.login)
-		if response.login=="success":
+		json_res=json.loads(response.content)
+		print(json_res.login)
+		if json_res.login=="success":
 			return render(request, 'farmindex/mainpage.html')
-		print(response.login)
+		print(json_res.login)
 		print(credentials)
 
 def fetch(request):
