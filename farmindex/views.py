@@ -25,7 +25,7 @@ def login(request):
 		print(json_res['login'])
 		if json_res['login']=="success":
 			return render(request, 'farmindex/mainpage.html')
-		print(json_res.['login'])
+		print(json_res['login'])
 		print(credentials)
 
 def fetch(request):
