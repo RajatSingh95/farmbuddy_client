@@ -18,7 +18,10 @@ def login(request):
 		response = requests.post('http://10.0.3.23:8017/restapi/logindetail/', data=credentials)
 		print(response)
 		print(response.content)
-		json_res=json.loads(str(response.content))
+		jsonr=response.content
+		json_dec=jsonr.decode("utf-8")
+		print(json_dec)
+		json_res=json.loads(json_dec)
 		print(json_res.login)
 		if json_res.login=="success":
 			return render(request, 'farmindex/mainpage.html')
