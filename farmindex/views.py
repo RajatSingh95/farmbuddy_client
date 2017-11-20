@@ -36,7 +36,8 @@ def statistics(request):
 	json_dec=jsonr.decode("utf-8")
 	json_res=json.loads(json_dec)
 	print(json_res)
-	return render(request, 'farmindex/statistics.html')
+	data={'rice': json_res}
+	return render(request, 'farmindex/statistics.html',data)
 
 def fetch(request):
 	return render(request, 'farmindex/index_pre.html')
