@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.http import HttpResponse
+import requests
 
 
 # It renders the landing Page of the website.
@@ -14,6 +15,8 @@ def login(request):
 		mobile = request.POST.get('mobile', None)
 		password = request.POST.get('password', None)
 		credentials={'mobile':mobile, 'pass': password}
+		response = requests.post('http://10.0.3.23:8017/restapi/logindetail', data=credentials)
+		print(response.content)
 		print(credentials)
 
 def fetch(request):
