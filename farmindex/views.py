@@ -14,7 +14,7 @@ def login(request):
 		mobile = request.POST.get('mobile', None)
 		password = request.POST.get('password', None)
 		credentials={'mobile':mobile, 'pass': password}
-		print credentials
+		print(credentials)
 
 def fetch(request):
 	return render(request, 'farmindex/index_pre.html')
