@@ -43,6 +43,12 @@ def statistics(request):
 		else:
 			dic[obj['fields']['Year']]=obj['fields']['Yield']
 		print(obj['fields']['Name'])
+	for year in dic:
+		dt={}
+		dt['x']=year
+		dt['y']=dic[year]
+		lst.append(dt)
+	print(lst)
 	print(dic)
 	print(json_res)
 	data={'rice': json_res}
