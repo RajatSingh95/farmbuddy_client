@@ -35,9 +35,15 @@ def statistics(request):
 	jsonr=response.content
 	json_dec=jsonr.decode("utf-8")
 	json_res=json.loads(json_dec)
-
+	lst=[]
+	dic={}
 	for obj in json.loads(json_res['crop_detail']):
+		if obj['fields']['Year'] in dic:
+			dic[obj['fields']['Year']]+=obj['fields']['Yield']
+		else:
+			dic[obj['fields']['Year']]=obj['fields']['Yield']
 		print(obj['fields']['Name'])
+	print(dic)
 	print(json_res)
 	data={'rice': json_res}
 	return render(request, 'farmindex/statistics.html',data)
