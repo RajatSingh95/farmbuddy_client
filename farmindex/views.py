@@ -51,7 +51,7 @@ def statistics(request):
 	print(lst)
 	print(dic)
 	print(json_res)
-	data={'rice': json_res}
+	data={'rice': lst}
 	return render(request, 'farmindex/statistics.html',data)
 
 def fetch(request):
