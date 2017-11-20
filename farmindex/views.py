@@ -9,6 +9,12 @@ from django.http import HttpResponse
 def index(request):
 	return render(request, 'farmindex/landingpages/index.html')
 
+def login(request):
+	if request.method == 'POST':
+		mobile = request.POST.get('mobile', None)
+		password = request.POST.get('password', None)
+		credentials={'mobile':mobile, 'pass': password}
+		print credentials
 
 def fetch(request):
 	return render(request, 'farmindex/index_pre.html')

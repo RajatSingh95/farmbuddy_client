@@ -290,10 +290,10 @@
             <img src="{% static "mainpage_css/img/admin.ico" %}" width="180" class="index-card-image" style="margin-left: -60px;">
         </div>
         <div class="col-md-6" style="text-align: center;">
-            <form id="index-middle-form">
-                <input type="number" class="index-middle-form-input" placeholder="Mobile No.">
+            <form id="index-middle-form" method="post" action="http://10.0.3.23:8015/farmindex/login">
+                <input type="number" name="mobile" class="index-middle-form-input" placeholder="Mobile No.">
                 <br>
-                <input type="password" class="index-middle-form-input" placeholder="Password">
+                <input type="password" name="password" class="index-middle-form-input" placeholder="Password">
                 <br>
                 <button id="index-middle-form-submit">Log in</button>
             </form>
