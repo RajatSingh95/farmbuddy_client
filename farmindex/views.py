@@ -17,10 +17,10 @@ def login(request):
 		credentials={'mobile':mobile, 'pass': password}
 		response = requests.post('http://10.0.3.23:8017/restapi/logindetail/', data=credentials)
 		print(response.content)
-		print(response.content.login)
-		if response.content.login=="success":
+		print(response.login)
+		if response.login=="success":
 			return render(request, 'farmindex/mainpage.html')
-		print(response.content.login)
+		print(response.login)
 		print(credentials)
 
 def fetch(request):
