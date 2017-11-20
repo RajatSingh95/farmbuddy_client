@@ -30,6 +30,7 @@ def login(request):
 
 
 def statistics(request):
+	##################
 	analytics={'type': 'Rice'}
 	response = requests.post('http://10.0.3.23:8017/restapi/statistic/', data=analytics)
 	jsonr=response.content
@@ -51,7 +52,36 @@ def statistics(request):
 	print(lst)
 	print(dic)
 	print(json_res)
-	data={'rice': lst}
+	###################
+	analytics={'type': 'Wells'}
+	response = requests.post('http://10.0.3.23:8017/restapi/statistic/', data=analytics)
+	jsonr=response.content
+	json_dec=jsonr.decode("utf-8")
+	json_res=json.loads(json_dec)
+	lst2=[]
+	dic={}
+	area_count={}
+	for obj in json.loads(json_res['well_detail']):
+		if obj['fields']['Area'] in dic:
+			dic[obj['fields']['Area']]+=obj['fields']['depth']
+			area_count[obj['fields']['Area']]+=1
+		else:
+			dic[obj['fields']['Area']]=obj['fields']['depth']
+			area_count[obj['fields']['Area']]=1
+		print(obj['fields']['Area'])
+	for key in dic:
+		dic[key]=(dic[key])/area_count[key]
+	for area in dic:
+		dt={}
+		dt['y']=dic[area]
+		dt['label']=area
+		lst2.append(dt)
+	print(lst2)
+	print(dic)
+	print(json_res)
+	
+	
+	data={'rice': lst , 'well':lst2}
 	return render(request, 'farmindex/statistics.html',data)
 
 def fetch(request):

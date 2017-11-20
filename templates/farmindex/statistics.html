@@ -65,13 +65,14 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 		type: "column",
 		axisXType: "secondary",
 		yValueFormatString: "#,##0 meters",
-		dataPoints: [
+		/*dataPoints: [
 			{ y: 300, label: "Continental Shelf" },
 			{ y: 3000, label: "Continental Slope" },
 			{ y: 4000, label: "Continental Rise" },
 			{ y: 6000, label: "Abyssal Plain", indexLabel: "Deepest" },
 			{ y: 4400, label: "Sea Mount" }
-		]
+		]*/
+		dataPoints:{{ well|safe }}
 	}]
 });
 chart2.render();
