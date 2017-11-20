@@ -30,6 +30,12 @@ def login(request):
 
 
 def statistics(request):
+	analytics={'type': 'Rice'}
+	response = requests.post('http://10.0.3.23:8017/restapi/statistic/', data=analytics)
+	jsonr=response.content
+	json_dec=jsonr.decode("utf-8")
+	json_res=json.loads(json_dec)
+	print(json_res)
 	return render(request, 'farmindex/statistics.html')
 
 def fetch(request):
