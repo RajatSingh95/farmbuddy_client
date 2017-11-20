@@ -94,6 +94,11 @@ def statistics(request):
 	dic['between 75k-100k']=0
 	dic['above 1lac']=0
 	house_count={}
+	house_count['below 20k']=0
+	house_count['between 20k-50k']=0
+	house_count['between 50k-75k']=0
+	house_count['between 75k-100k']=0
+	house_count['above 1lac']=0
 	for obj in json.loads(json_res['house_detail']):
 		if obj['fields']['Income'] < 20000:
 			dic['below 20k']+=obj['fields']['Income']
