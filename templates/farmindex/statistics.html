@@ -11,7 +11,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	exportEnabled: true,
 	theme: "light1", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Simple Column Chart with Index Labels"
+		text: "Year wise Average Yield of Rice"
 	},
 	data: [{
 		type: "column", //change type to bar, line, area, pie, etc
@@ -50,7 +50,7 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 	exportEnabled: true,
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Depth of Ocean at Different Levels"
+		text: "Average depth of wells in different states"
 	},
 	axisY: {
 		title: "Depth (in meters)",
@@ -86,7 +86,7 @@ var chart3 = new CanvasJS.Chart("chartContainer3", {
 	exportEnabled: true,
 	animationEnabled: true,
 	title: {
-		text: "Desktop Browser Market Share in 2016"
+		text: "House distribution on the basis of family Annual Income"
 	},
 	data: [{
 		type: "pie",
@@ -119,7 +119,7 @@ var chart4 = new CanvasJS.Chart("chartContainer4", {
 	animationEnabled: true,
 	zoomEnabled: true,
 	title: {
-		text: "Try Zooming and Panning"
+		text: "Average Income distribution on the basis of family size"
 	},
 	data: [{
 		type: "area",
@@ -137,9 +137,17 @@ chart4.render();
 </head>
 <body>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<br>
+<br>
 <div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+<br>
+<br>
 <div id="chartContainer3" style="height: 370px; width: 100%;"></div>
+<br>
+<br>
 <div id="chartContainer4" style="height: 370px; width: 100%;"></div>
+<br>
+<br>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
