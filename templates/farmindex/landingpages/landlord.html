@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Landlord - FarmBuddy</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/farmbuddy.css" rel="stylesheet">
+	<style>
+        #heading,#landlord-bottom-heading{
+			width:100%;
+            padding-top: 5px;
+            color: grey;
+            font-weight: bold;
+			height:50px;
+			background-color: white;
+            font-size: 1.8em;
+            text-align: left;
+            padding-left: 20px;
+            box-shadow:3px 3px 3px 0px darkseagreen;
+		}
+        #landlord-bottom-heading{
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        #landlord-middle{
+            margin-top: 50px;
+            width:100%;
+        }
+        #landlord-bottom{
+            width:100%;
+            min-height:350px;
+            padding-left:50px;
+        }
+        .allowdeny-button,.sort-button,.filter-button,.advt-button{
+            background: none;
+            width:120px;
+            height:30px;
+            font-size:0.7em;
+            border-radius: 3px;
+            border:1.5px solid darkseagreen;
+            margin-left: 10px;
+        }
+        .allowdeny-button{
+            background: #39ac6b;
+            border-width: 0px;
+            color: white;
+            margin-top: 35px;
+            font-size: 1em;
+        }
+        #landlord-image{
+            text-align: center;
+            padding-top: 75px;
+            padding-bottom: 75px;
+        }
+        #landlord-details{
+            min-height: 350px;
+            padding: 25px;
+        }
+        #landlord-details-box{
+            min-height: 300px;
+            width:100%;
+            box-shadow:1.5px 1.5px 1.5px 1.5px lightgrey;
+            font-size: 1.2em;
+            color: dimgrey;
+            padding-top: 20px;
+        }
+        #landlord-details-box li{
+            margin-top:10px;
+        }
+        
+        .landlord-bottom-booking-image{
+            padding-top: 30px;
+            padding-bottom: 30px;
+            box-shadow:1.5px 1.5px 1.5px 1.5px lightgrey;
+            margin-left: 2.5%;
+        }
+        .landlord-bottom-booking-details{
+            min-height:100px;
+            box-shadow:1.5px 1.5px 1.5px 1.5px lightgrey;
+            margin-left: 2.5%;
+        }
+        #landlord-details-box-placeads{
+            margin-top: 30px;
+            float: left;
+            margin-left:25px;
+        }
+        #landlord-login{
+            float:right;
+            margin-right: 20px;
+        }
+        #landlord-login-form{
+            padding: 25px;
+            padding-top: 35px;
+        }
+        #landlord-login-button{
+            background: #2E8B57;
+            color: white;
+            width:150px;
+            height:35px;
+            border-width:0px;
+            font-size: 0.8em;
+            border-radius: 3px;
+        }
+	</style>
+</head>
+<body>
+<!-- heading -->
+<div id="heading">
+    <span>Farm3UDDY</span>
+</div>
+<!-- Sidepane-->
+    <div id="sidepane">
+        <div id="sidepane-user-details" style="text-align: center;">
+            <img id="user-login-image" src="img/user.png" width="70">
+            <br>
+            <br>
+            <div>
+                ABC XYZ
+            </div>
+            <form id="landlord-login-form">
+                    <input type="submit" value="LOG OUT" id="landlord-login-button">
+            </form>
+        </div>
+        <ul type="none">
+            <li >
+                <a><nobr>
+                    <i class="material-icons md-20">home</i>
+                    <span class="sp-text">Home</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                    <i class="material-icons md-20">account_box</i>
+                    <span class="sp-text">Friends</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                
+                    <i class="material-icons md-20">assessment</i>
+                    <span class="sp-text">My Stats</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                
+                    <i class="material-icons md-20">add_alert</i>
+                    <span class="sp-text">Notifications</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                
+                    <i class="material-icons md-20">build</i>
+                    <span class="sp-text">Helpdesk</span></nobr></a>
+            </li>
+        </ul>
+    </div>
+    
+<!-- main body -->
+<div class="container" id="landlord-middle">
+    <div class="row">
+        <div class="col-md-5" id="landlord-image">
+            <img src="img/user.png" width="200" style="border-radius: 100px;">
+        </div>
+        <div class="col-md-7" id="landlord-details">
+            <div id="landlord-details-box">
+                <ul type="none">
+                    <li>Name : ABC XYZ</li>
+                    <li>Age : 69</li>
+                    <li>Address: IIITS Boys hostel, Gnan marg, SriCity-517646.</li>
+                </ul>
+                <div id="landlord-details-box-placeads"><button class="advt-button">PLACE ADVT.</button></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- bottom -->
+<div id="landlord-bottom-heading">
+        <span style="float: left; margin-left:70px;">REQUESTS</span>
+        <span style="float: right;"><button class="sort-button">SORT</button><button class="filter-button">FILTER</button></span>
+</div>
+<div class="container" id="landlord-bottom">
+    <div class="row" style="min-height: 100px;padding-top: 15px;">
+        <div class="col-md-2 landlord-bottom-booking-image">
+            <img src="img/user.png" width="40" style="border-radius: 20px;">
+        </div>
+        <div class="col-md-9 landlord-bottom-booking-details">
+            <span style="float: right;"><button class="allowdeny-button">ALLOW</button><button class="allowdeny-button">DENY</button></span>
+        </div>
+    </div>
+    <div class="row" style="min-height: 100px;padding-top: 15px;">
+        <div class="col-md-2 landlord-bottom-booking-image">
+            <img src="img/user.png" width="40" style="border-radius: 20px;">
+        </div>
+        <div class="col-md-9 landlord-bottom-booking-details">
+            <span style="float: right;"><button class="allowdeny-button">ALLOW</button><button class="allowdeny-button">DENY</button></span>
+        </div>
+    </div>
+    <div class="row" style="min-height: 100px;padding-top: 15px;">
+        <div class="col-md-2 landlord-bottom-booking-image">
+            <img src="img/user.png" width="40" style="border-radius: 20px;">
+        </div>
+        <div class="col-md-9 landlord-bottom-booking-details">
+            <span style="float: right;"><button class="allowdeny-button">ALLOW</button><button class="allowdeny-button">DENY</button></span>
+        </div>
+    </div>
+    <div class="row" style="min-height: 100px;padding-top: 15px;">
+        <div class="col-md-2 landlord-bottom-booking-image">
+            <img src="img/user.png" width="40" style="border-radius: 20px;">
+        </div>
+        <div class="col-md-9 landlord-bottom-booking-details">
+            <span style="float: right;"><button class="allowdeny-button">ALLOW</button><button class="allowdeny-button">DENY</button></span>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FarmBuddy</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/farmbuddy.css" rel="stylesheet">
+    
+    
+    
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Day');
+      data.addColumn('number', 'Land rates');
+      data.addRows([
+        [1,   8.8],
+        [2,   7.6],
+        [3,  12.3],
+        [4,  42.9],
+        [5, 30.9],
+        [6,  5.3],
+        [7,  80.8]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Land rates in a week',
+          subtitle: 'in thousand of rupees per hectare'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+    
+    
+	<style>
+        #heading{
+			width:100%;
+            background-color:none;
+            padding-top: 5px;
+            font-weight: bold;
+			height:50px;
+			color:white;
+            font-size: 1.8em;
+            text-align: left;
+            padding-left: 20px;
+            /*box-shadow:3px 3px 3px 0px darkseagreen;*/
+		}
+        #index-bottom-heading{
+            width:100%;
+            background-color:#E8E8E8;
+            font-weight: bold;
+			color: grey;
+            box-shadow:3px 3px 3px 0px darkseagreen;
+            padding-left: 60px;
+            padding-top: 10px;
+        }
+        #index-middle{
+            padding-top: 100px;
+            padding-bottom: 170px;
+            width:100%;
+            min-height:500px;
+            /*background: linear-gradient(to bottom right, #E8E8E8, white);*/
+            
+        }
+        .index-middle-form-input{
+            width:70%;
+            height: 40px;
+            border-radius: 2px;
+            margin-top: 20px;
+            border-width: 1px;
+            color: grey;
+            padding: 2px;
+            font-size: 1.1em;
+        }
+        #index-middle-form-submit{
+            color: white;
+            background: #39ac6b;
+            width:70%;
+            height: 40px;
+            border-radius: 2px;
+            border-width: 0px;
+            margin-top: 60px;
+            font-size: 1.1em;
+        }
+        #index-bottom{
+            width:100%;
+            min-height:350px;
+            
+        }
+        .checkout-button,.sort-button,.filter-button{
+            background: white;
+            width:120px;
+            height:30px;
+            font-size:0.7em;
+            border-radius: 3px;
+            border:1.5px solid #39ac6b;
+        }
+        .checkout-button{
+            background: #39ac6b;
+            border-width: 0px;
+            color: white;
+            margin-top: 35px;
+            font-size: 1em;
+        }
+       
+        #index-details{
+            min-height: 350px;
+            padding: 25px;
+        }
+        #index-details-box{
+            min-height: 300px;
+            width:100%;
+            box-shadow:1.5px 1.5px 1.5px 1.5px lightgrey;
+            font-size: 1.2em;
+            color: dimgrey;
+            padding-top: 20px;
+        }
+        #index-details-box li{
+            margin-top:10px;
+        }
+        
+        .index-bottom-booking-image{
+            padding-top: 30px;
+            padding-bottom: 30px;
+            box-shadow:1.5px 1.5px 1.5px 1.5px lightgrey;
+            margin-left: 2.5%;
+        }
+        .index-bottom-booking-details{
+            min-height:100px;
+            box-shadow:1.5px 1.5px 1.5px 1.5px lightgrey;
+            margin-left: 2.5%;
+        }
+        #index-login{
+            float:right;
+            margin-right: 20px;
+        }
+        #index-login-form{
+            padding: 25px;
+            padding-top: 35px;
+        }
+        #index-login-button{
+            background: white;
+            color: seagreen;
+            width:150px;
+            height:35px;
+            border-width:0px;
+            font-size: 0.8em;
+            border-radius: 3px;
+        }
+        .index-card-image{
+            border-radius: 90px;
+            border: 2px solid white;
+        }
+        .index-card-name{
+            font-size: 1.3em;
+            margin-top: 20px;
+            color: grey;
+            font-weight: bold;
+        }
+        #triangle-bottomleft {
+            width: 0;
+            height: 0;
+            border-bottom: 200px solid white;
+            border-left: 90vw solid transparent;
+            margin-top: 32px;
+        }
+        #triangle-bottomright {
+            width: 0;
+            height: 0;
+            border-top: 200px solid white;
+            border-left: 90vw solid transparent;
+        }
+	</style>
+    
+    <script>
+        $(document).scroll(function() {
+          var y = $(this).scrollTop();
+          if (y > 150) {
+            $('#heading').css("background-color","#606060");
+              
+          } 
+          if(y<150) {
+            $('#heading').css("background","none");
+          }
+        });
+    </script>
+    
+</head>
+<body>
+<!-- heading -->
+<div id="heading">
+    <span style="float: left;">Farm3UDDY</span>
+</div>
+<!-- Sidepane--><!--
+    <div id="sidepane">
+        <div id="sidepane-user-details" style="text-align: center;">
+            <img id="user-login-image" src="img/user.png" width="70">
+            <br>
+            <br>
+            <div>
+                ABC XYZ
+            </div>
+            <form id="index-login-form">
+                    <input type="submit" value="LOG OUT" id="index-login-button">
+            </form>
+        </div>
+        <ul type="none">
+            <li >
+                <a><nobr>
+                    <i class="material-icons md-20">home</i>
+                    <span class="sp-text">Home</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                    <i class="material-icons md-20">account_box</i>
+                    <span class="sp-text">Manage Users</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                
+                    <i class="material-icons md-20">assessment</i>
+                    <span class="sp-text">Helpdesk Tracker</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                
+                    <i class="material-icons md-20">build</i>
+                    <span class="sp-text">Income Tracker</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                
+                    <i class="material-icons md-20">add_alert</i>
+                    <span class="sp-text">Expense Tracker</span></nobr></a>
+            </li>
+            <li >
+                <a><nobr>
+                
+                    <i class="material-icons md-20">add_alert</i>
+                    <span class="sp-text">Bank & Cash</span></nobr></a>
+            </li>
+            
+        </ul>
+    </div>
+    -->
+<!-- main body -->
+<div class="container" style="height:600px; width:100%;">
+    <div class="row" style=" height:100%;background-image: url(img/index.jpg);background-size: cover;">
+        <div style="font-weight:bold;color: white; font-size: 2.2em; margin-left: 20px; margin-top: 180px; margin-bottom: 20px;display: inline-block;">In search of lands? <br>Not getting good price for your land? <br>Then you are at right place. 
+        </div> 
+        <br>
+        <button style="font-size: 1.1em; border-radius: 5px; border-width: 0px; background: #39ac6b;color: white; width: 150px; height:40px;margin-left: 20px;">REGISTER NOW!
+        </button>
+        <div id="triangle-bottomleft">
+        </div>
+    </div>
+</div>
+
+<div class="container" id="index-middle">
+    <div class="row">
+        <div class="col-md-6" style="text-align: center;">
+            <img src="img/farmer.ico" width="180" class="index-card-image" >
+            <img src="img/landlord.ico" width="220" class="index-card-image" style="border-radius:110px;margin-left: -60px;">
+            <img src="img/admin.ico" width="180" class="index-card-image" style="margin-left: -60px;">
+        </div>
+        <div class="col-md-6" style="text-align: center;">
+            <form id="index-middle-form">
+                <input type="number" class="index-middle-form-input" placeholder="Mobile No.">
+                <br>
+                <input type="password" class="index-middle-form-input" placeholder="Password">
+                <br>
+                <button id="index-middle-form-submit">Log in</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    
+<div class="container" style="height:600px;width: 100%; ">
+    <div class="row" style=" height:100%;background-image: url(img/helpfarmer2.jpg);background-size: cover;">
+        <div id="triangle-bottomright">
+        </div>
+        <div style="font-weight:bold;color: white; font-size: 2.2em; margin-left: 20px; margin-top: 120px; margin-bottom: 20px;display: inline-block;">We help you to get the best deals. <br> Best customer support so that you don't get stuck. <br> Reliable network of farmers and landlords at one place. </div> <br><button style="font-size: 1.1em; border-radius: 5px; border-width: 0px; background: #39ac6b;color: white; width: 150px; height:40px;margin-left: 20px;">REGISTER NOW!</button>
+    </div>
+</div>
+
+<br>
+<br>
+<!-- bottom -->
+<div class="container" style="width: 100%;">
+    <div class="row" style="text-align: center;">
+        <div style="font-weight:bold;color: grey; font-size: 2.2em; text-align: center; margin-top: 50px; margin-bottom: 20px;">
+            Get land rate details per day so that you don't miss any best deal.
+            <img src="img/graph.png" width="70%" style="margin-top: 50px;margin-bottom: 50px;">
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container" style="height:300px;width: 100%;">
+    <div class="row" style="background: #606060;width: 100%;height: 100%;color: white;">
+        <div class="col-md-12" style="text-align: center;">
+            <div style="font-weight: bold;margin-top: 8%;font-size: 3.5em;">Farm3uddy</div>
+            <hr style="width: 40%;">
+            <div style="font-size: 1.2em;">- AN INITIATIVE TO PUT FARMER AND LANDLORD CLOSER -</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

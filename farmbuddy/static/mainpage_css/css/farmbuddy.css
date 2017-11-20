@@ -1,0 +1,94 @@
+    
+body{
+    font-family: 'Exo 2', sans-serif;
+}
+.container{
+    padding: 0px;
+    z-index: 0;
+    margin: 0px;
+
+}
+.row{
+    margin: 0px;
+}
+
+/*heading*/
+
+#heading{
+    z-index:1;
+    position: fixed;
+    top:0px;
+}
+
+
+/*sidepane*/
+#sidepane{
+            width:60px;
+            transition: width 0.5s;
+            position: fixed;
+            height:100vh;
+            background: #39ac6b;
+            overflow:hidden;
+            z-index:1;
+            font-size:1.2em;
+        }
+        
+        #user-login-image{
+            border-radius: 35px; 
+            border:3px solid white;
+        }
+        .sp-text, #sidepane-user-details{
+            opacity: 0;
+            transition: opacity .1s linear;
+
+        }
+        #sidepane li{
+            height:50px;
+            padding-left:15px;
+            padding-top:5px;
+            
+        }
+        #sidepane a{
+            color: white;
+            text-decoration: none;
+
+        }
+        #sidepane span{
+            left:10px;
+            position: relative;
+            top:-9px;
+        }
+        #sidepane:hover{
+            width:210px;
+            overflow-y:scroll;
+            overflow-x: hidden;
+        }
+        #sidepane:hover .sp-text{
+            opacity:1;
+        }
+        #sidepane-user-details{
+            color: white;
+            opacity:0;
+            margin-top: 20px;
+        }
+        #sidepane:hover #sidepane-user-details{
+            opacity: 1;
+        }
+        #sidepane li:hover{
+            background-color:seagreen;
+        }
+        #sidepane li:hover .sp-text, li:hover i{
+            color:white;
+        }
+        #sidepane ul{
+            position: relative;
+            top:50px;
+            padding-left: 0px;
+            padding-bottom: 30px;
+        }
+        .material-icons.md-20 { font-size: 35px; }
+        #sidepane::-webkit-scrollbar {
+          width: 6px; 
+           background-color: seagreen;
+          -webkit-border-radius: 80px;
+        }
