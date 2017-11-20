@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 # It renders the landing Page of the website.
 def index(request):
-	return render(request, 'farmindex/index.html')
+	return render(request, 'farmindex/landingpages/index.html')
 
 
 def fetch(request):
