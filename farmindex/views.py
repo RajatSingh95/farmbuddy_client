@@ -126,10 +126,36 @@ def statistics(request):
 	print(lst3)
 	print(dic)
 	print(json_res)
+	#####################
 
-
+	analytics={'type': 'Family'}
+	response = requests.post('http://10.0.3.23:8017/restapi/statistic/', data=analytics)
+	jsonr=response.content
+	json_dec=jsonr.decode("utf-8")
+	json_res=json.loads(json_dec)
+	lst4=[]
+	dic={}
+	family_count={}
+	for obj in json.loads(json_res['family_detail']):
+		if obj['fields']['Members'] in dic:
+			dic[obj['fields']['Members']]+=obj['fields']['Income']
+			family_count[obj['fields']['Members']]+=1
+		else:
+			dic[obj['fields']['Members']]=obj['fields']['Income']
+			family_count[obj['fields']['Members']]=1
+		print(obj['fields']['Members'])
+	for key in dic:
+		dic[key]=(dic[key])/family_count[key]
+	for mem in dic:
+		dt={}
+		dt['x']=mem
+		dt['y']=dic[mem]
+		lst4.append(dt)
+	print(lst4)
+	print(dic)
+	print(json_res)
 	
-	data={'rice': lst , 'well':lst2, 'income':lst3}
+	data={'rice': lst , 'well':lst2, 'income':lst3, 'family':lst4}
 	return render(request, 'farmindex/statistics.html',data)
 
 def fetch(request):
