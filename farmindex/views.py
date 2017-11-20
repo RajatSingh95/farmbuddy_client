@@ -28,6 +28,10 @@ def login(request):
 		print(json_res['login'])
 		print(credentials)
 
+
+def statistics(request):
+	return render(request, 'farmindex/statistics.html')
+
 def fetch(request):
 	return render(request, 'farmindex/index_pre.html')
 
