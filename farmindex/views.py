@@ -117,7 +117,7 @@ def statistics(request):
 			house_count['above 1lac']+=1
 		print(obj['fields']['Income'])
 	for key in dic:
-		dic[key]=(dic[key])/house_count[key]
+		dic[key]=(dic[key])/(house_count[key]+1)
 	for cat in dic:
 		dt={}
 		dt['y']=dic[cat]
