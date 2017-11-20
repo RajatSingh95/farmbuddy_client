@@ -120,7 +120,7 @@ def statistics(request):
 		dic[key]=(dic[key])/(house_count[key]+1)
 	for cat in dic:
 		dt={}
-		dt['y']=dic[cat]
+		dt['y']=house_count[cat]
 		dt['label']=cat
 		lst3.append(dt)
 	print(lst3)
