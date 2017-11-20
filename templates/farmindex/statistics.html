@@ -96,7 +96,7 @@ var chart3 = new CanvasJS.Chart("chartContainer3", {
 		legendText: "{label}",
 		indexLabelFontSize: 16,
 		indexLabel: "{label} - {y}%",
-		dataPoints: [
+		/*dataPoints: [
 			{ y: 51.08, label: "Chrome" },
 			{ y: 27.34, label: "Internet Explorer" },
 			{ y: 10.62, label: "Firefox" },
@@ -104,7 +104,8 @@ var chart3 = new CanvasJS.Chart("chartContainer3", {
 			{ y: 4.07, label: "Safari" },
 			{ y: 1.22, label: "Opera" },
 			{ y: 0.44, label: "Others" }
-		]
+		]*/
+		dataPoints:{{ income|safe }}
 	}]
 });
 chart3.render();

@@ -79,9 +79,52 @@ def statistics(request):
 	print(lst2)
 	print(dic)
 	print(json_res)
+	#######################
+
+	analytics={'type': 'Income'}
+	response = requests.post('http://10.0.3.23:8017/restapi/statistic/', data=analytics)
+	jsonr=response.content
+	json_dec=jsonr.decode("utf-8")
+	json_res=json.loads(json_dec)
+	lst3=[]
+	dic={}
+	dic['below 20k']=0
+	dic['between 20k-50k']=0
+	dic['between 50k-75k']=0
+	dic['between 75k-100k']=0
+	dic['above 1lac']=0
+	house_count={}
+	for obj in json.loads(json_res['house_detail']):
+		if obj['fields']['Income'] < 20000:
+			dic['below 20k']+=obj['fields']['Income']
+			house_count['below 20k']+=1
+		elif obj['fields']['Income'] > 20000 and obj['fields']['Income'] < 50000:
+			dic['between 20k-50k']+=obj['fields']['Income']
+			house_count['between 20k-50k']+=1
+		elif obj['fields']['Income'] > 50000 and obj['fields']['Income'] < 75000:
+			dic['between 50k-75k']+=obj['fields']['Income']
+			house_count['between 50k-75k']+=1
+		elif obj['fields']['Income'] > 75000 and obj['fields']['Income'] < 100000:
+			dic['between 75k-100k']+=obj['fields']['Income']
+			house_count['between 75k-100k']+=1
+		elif obj['fields']['Income'] > 100000:
+			dic['above 1lac']+=obj['fields']['Income']
+			house_count['above 1lac']+=1
+		print(obj['fields']['Area'])
+	for key in dic:
+		dic[key]=(dic[key])/house_count[key]
+	for cat in dic:
+		dt={}
+		dt['y']=dic[cat]
+		dt['label']=cat
+		lst3.append(dt)
+	print(lst3)
+	print(dic)
+	print(json_res)
+
+
 	
-	
-	data={'rice': lst , 'well':lst2}
+	data={'rice': lst , 'well':lst2, 'income':lst3}
 	return render(request, 'farmindex/statistics.html',data)
 
 def fetch(request):
