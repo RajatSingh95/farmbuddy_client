@@ -16,6 +16,7 @@ def login(request):
 		password = request.POST.get('password', None)
 		credentials={'mobile':mobile, 'pass': password}
 		response = requests.post('http://10.0.3.23:8017/restapi/logindetail/', data=credentials)
+		print(response)
 		print(response.content)
 		json_res=json.loads(response.content)
 		print(json_res.login)
