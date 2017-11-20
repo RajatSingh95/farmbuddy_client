@@ -45,8 +45,8 @@ def statistics(request):
 		print(obj['fields']['Name'])
 	for year in dic:
 		dt={}
-		dt['x']=year
-		dt['y']=dic[year]
+		dt[x]=year
+		dt[y]=dic[year]
 		lst.append(dt)
 	print(lst)
 	print(dic)
