@@ -5,7 +5,7 @@
 <script>
 
 window.onload = function () {
-console.log('{{ rice }}');
+console.log('{{ rice|safe }}');
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
@@ -34,7 +34,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 			{ x: 120, y: 49 },
 			{ x: 130, y: 21, indexLabel: "Lowest" }
 		]*/
-		dataPoints:{{ rice }}
+		dataPoints:{{ rice|safe }}
 	}]
 });
 chart.render();
