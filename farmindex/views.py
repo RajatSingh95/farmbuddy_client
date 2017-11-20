@@ -22,10 +22,10 @@ def login(request):
 		json_dec=jsonr.decode("utf-8")
 		print(json_dec)
 		json_res=json.loads(json_dec)
-		print(json_res.login)
-		if json_res.login=="success":
+		print(json_res['login'])
+		if json_res['login']=="success":
 			return render(request, 'farmindex/mainpage.html')
-		print(json_res.login)
+		print(json_res.['login'])
 		print(credentials)
 
 def fetch(request):
