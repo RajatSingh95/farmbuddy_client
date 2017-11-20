@@ -115,7 +115,7 @@ def statistics(request):
 		elif obj['fields']['Income'] > 100000:
 			dic['above 1lac']+=obj['fields']['Income']
 			house_count['above 1lac']+=1
-		print(obj['fields']['Area'])
+		print(obj['fields']['Income'])
 	for key in dic:
 		dic[key]=(dic[key])/house_count[key]
 	for cat in dic:
