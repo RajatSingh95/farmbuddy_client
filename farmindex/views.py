@@ -37,7 +37,7 @@ def statistics(request):
 	json_res=json.loads(json_dec)
 
 	for obj in json.loads(json_res['crop_detail']):
-		print(obj)
+		print(obj['fields']['Name'])
 	print(json_res)
 	data={'rice': json_res}
 	return render(request, 'farmindex/statistics.html',data)
