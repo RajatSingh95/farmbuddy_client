@@ -146,10 +146,10 @@ def statistics(request):
 		print(obj['fields']['Members'])
 	for key in dic:
 		dic[key]=(dic[key])/family_count[key]
-	for mem in sorted(dic.iterkeys()):
+	for x,y in sorted(dic.items()):
 		dt={}
-		dt['x']=mem
-		dt['y']=dic[mem]
+		dt['x']=x
+		dt['y']=y
 		lst4.append(dt)
 	print(lst4)
 	print(dic)
