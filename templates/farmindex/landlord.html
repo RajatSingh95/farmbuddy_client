@@ -122,8 +122,8 @@ chart_pie.render();
 </style>
 
 <script>
-	function getmapdetails(){
-		console.log('send request');
+	//function getmapdetails(){
+	//	console.log('send request');
 		$.ajax({
     url : "http://10.0.3.23:8017/restapi/mapdetail/",
     type: "POST",
@@ -215,12 +215,12 @@ chart_pie.render();
 		//$('#request').html(data.farmer_detail);
     }
 });	
-	}
+//	}
 	
 </script>
 <h1>CLick to Get Map!</h1>
 
-<button onclick="getmapdetails()">Click here to get farms locations.</button>
+<!--<button onclick="getmapdetails()">Click here to get farms locations.</button> -->
 <div id='request'></div>
 <div id = "map" style= "display:inline-block;" >
 </div>
