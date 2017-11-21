@@ -142,14 +142,50 @@ chart_pie.render();
 	        //var filter=JSON.stringify(obj);
 	    	console.log('filter: ' + obj.features);
 	        console.log('filter-len: ' + obj.features.length);
-	    	var map = new GMaps({
+
+
+		var flag=1;
+		 for (var i = 0, len = obj.features.length; i < len; ++i) {
+     			var loc =obj.features[i].geometry.coordinates ;
+			for (var j = 0, leng = loc.length; j < leng; ++j) {
+     			  var lat=loc[j];
+				for (var k = 0, lengt = lat.length; k < lengt; ++k) {
+					console.log('latitude '+lat[k][0]);
+					console.log('longitude '+lat[k][1]);
+					var map = new GMaps({
 					el: '#map',
-        				lat: 16.008855935618726,
-        				lng: 79.7167968639029,
+        				lat: lat[k][1],
+        				lng: lat[k][0],
 					click: function(e){
 					  console.log(e);
 					}
 					});
+					flag=0;
+					break;
+				}
+				if(flag==0){
+					break;				
+				}
+	
+
+			}
+			if(flag==0){
+				break;			
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+	    	
 	        for (var i = 0, len = obj.features.length; i < len; ++i) {
      			var loc =obj.features[i].geometry.coordinates ;
 			for (var j = 0, leng = loc.length; j < leng; ++j) {
